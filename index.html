@@ -1,15 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NewsApp</title>
-</head>
-
-<body>
-    <script src="main.js"></script>
-</body>
-
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NewsApp</title></head><body><div class="app__header"><h1 class="app__header-text">NewsApp</h1></div><main class="app__main"><div id="sources" class="app__main-sources"></div><div class="app__main-search"><input class="app__main-search-field" type="search" maxlength="40" placeholder="Enter query" id="search-field"> <button class="app__btn btn__filter" id="filter-btn">Filter</button></div><div id="news" class="app__main-news"></div><h3 class="app__main-error" id="error-block" style="display: none;">There are no articles matching your request</h3><button class="app__btn btn__load" id="load-btn">Load more</button></main><footer class="app__footer"><p class="app__footer-text">Powered by <a class="app__footer-link" href="https://newsapi.org/">NewsApi</a></p></footer><template id="news-item-tpl"><div class="news__item"><div class="news__picture"></div><div class="news__content"><h2 class="news__title"></h2><h3 class="news__source"></h3><p class="news__text"></p><a class="news__link" href="#">Read more...</a></div></div></template><script type="text/javascript" src="main.js"></script></body></html>
