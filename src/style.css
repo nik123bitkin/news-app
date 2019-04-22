@@ -1,7 +1,7 @@
 body{
   color: #ffffff;
   background-color: #000000;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Audiowide', 'Arial Narrow Bold', fantasy;
   box-sizing: border-box;
 }
 
@@ -33,7 +33,7 @@ body{
   height: 140px;
   overflow: auto;
   align-items: center;
-  font: 300 1em "Impact",sans-serif;
+  font: 300 1em "Audiowide",sans-serif;
 }
 
 .app__main-sources::-webkit-scrollbar-track
@@ -57,6 +57,10 @@ body{
 	background-color: red;
 }
 
+.app__main-news{
+  font-family: 'Arial Narrow Bold', fantasy;
+}
+
 .app__btn{
   background: 0 0;
   border: 2px solid red;
@@ -68,6 +72,7 @@ body{
   white-space: nowrap;
   outline: none;
   font-size: 20px;
+  font-family: inherit;
 }
 
 .app__btn:hover{
@@ -92,7 +97,7 @@ body{
 .app__footer{
   height: 100px;
   text-align: center;
-}app__main-sources-btn
+}
 
 .app__footer-text{
   font-size: 14px;

@@ -68,37 +68,35 @@ function createNewsItem(token, data){
   return token;
 }
 
+function createBlock(newsCount, data){
+  const place = document.createDocumentFragment();
+  const news_item = document.querySelector('#news-item-tpl');
+  for (var i = 0; i < newsCount; i++) {
+    const item = (news_item.content) ? news_item.content.cloneNode(true).querySelector('.news__item') 
+      : news_item.querySelector('.news__item').cloneNode(true);
+    const child = createNewsItem(item, data[i]);
+    place.appendChild(child);
+  }
+  return place;
+}
+
 function loadBy(urlPart){
   hideError();
   var url = 'https://newsapi.org/v2/' + urlPart + 'apiKey=5878ce9411164b5398895920c506a413';
   var request = new Request(url);
   fetch(request)
     .then(function(response) { return response.json(); })
-    .then(function(data) {
+    .then(function(data) {  
+      const newsBlock = document.querySelector('#news');
+      newsBlock.innerHTML = '';
       const newsCount = data.articles.length;
       if(newsCount == 0){
-        const newsBlock = document.querySelector('#news');
-        newsBlock.innerHTML = '';
         showError();
         hideLoadBtn();
         return;
       }      
-      const place = document.createDocumentFragment();
-      const news_item = document.querySelector('#news-item-tpl');
-
-      for (var i = 0; i < newsCount; i++) {
-
-        const item = (news_item.content) ? news_item.content.cloneNode(true).querySelector('.news__item') 
-          : news_item.querySelector('.news__item').cloneNode(true);
-
-        const child = createNewsItem(item, data.articles[i]);
-
-        place.appendChild(child);
-      }
-
-      const newsBlock = document.querySelector('#news');
-      newsBlock.innerHTML = '';
-      newsBlock.appendChild(place);
+      const block = createBlock(newsCount, data.articles);
+      newsBlock.appendChild(block);
       if(newsCount < 5)
         hideLoadBtn();
       else
@@ -120,18 +118,9 @@ function append(){
         hideLoadBtn();
         return;
       }     
-      const place = document.createDocumentFragment();
-      const news_item = document.querySelector('#news-item-tpl');
-
-      for (var i = 0; i < newsCount; i++) {
-        const item = (news_item.content) ? news_item.content.cloneNode(true).querySelector('.news__item') 
-          : news_item.querySelector('.news__item').cloneNode(true);
-        const child = createNewsItem(item, data.articles[i]);
-        place.appendChild(child);
-      }
-
+      const block = createBlock(newsCount, data.articles);
       const newsBlock = document.querySelector('#news');
-      newsBlock.appendChild(place);
+      newsBlock.appendChild(block);
       newsDisplayed += newsCount;
       page++;
       if(newsCount < 5 || newsDisplayed == 40)
