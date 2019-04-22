@@ -121,6 +121,7 @@ body{
   background-color: #ffffff;
   color: #000000;
   border-radius: 10px;
+  font-size: 14px;
 }
 
 .news__picture{
@@ -139,27 +140,23 @@ body{
 }
 
 .news__title{
-  font-size: 14px;
   margin: 10px;
   padding: 0;
 }
 
 .news__source{
-  font-size: 14px;
   color: #444444;
   margin: 10px;
   padding: 0;
 }
 
 .news__text{
-  font-size: 14px;
   margin: 10px;
   padding: 0;
 }
 
 .news__link{
   outline: none;
-  font-size: 14px;
   text-decoration: none;
   outline: none;
   color: blue;
@@ -197,30 +194,9 @@ body{
     width: 70%;
   }
 
-  .news__title{
+  .news-item, .btn__filter, .app__main-search-field{
     font-size: 20px;
   }
-  
-  .news__source{
-    font-size: 20px;
-  }
-  
-  .news__text{
-    font-size: 20px;
-  }
-
-  .news__link{
-    font-size: 20px;
-  }
-
-  .btn__filter{
-    font-size: 20px;
-  }
-
-  .app__main-search-field{
-    font-size: 20px;
-  }
-
 }
 
 @media only screen and (min-width: 981px){
@@ -237,31 +213,7 @@ body{
     font-size: 32px;
   }
 
-  .btn__sources{
-    font-size: 26px;
-  }
-
-  .news__title{
-    font-size: 26px;
-  }
-  
-  .news__source{
-    font-size: 26px;
-  }
-  
-  .news__text{
-    font-size: 26px;
-  }
-
-  .news__link{
-    font-size: 26px;
-  }
-
-  .btn__filter{
-    font-size: 26px;
-  }
-
-  .app__main-search-field{
+  .news__item, .app__main-search-field, .btn__sources, .btn__filter{
     font-size: 26px;
   }
 }
